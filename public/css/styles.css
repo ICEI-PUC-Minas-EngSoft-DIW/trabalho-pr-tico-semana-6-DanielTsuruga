@@ -5,65 +5,34 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: #141414;
-    color: white;
+    background-color: #141414 !important;
+    color: white !important;
     font-family: Arial, sans-serif;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 15px 30px;
 }
 
-.left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo {
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 50%;
-}
-
-.brand-name {
-    padding: 6px 10px;
-}
-
 .menu {
-    display: flex;
     gap: 10px;
+    margin-left: 20px;
 }
 
 .menu a {
     text-decoration: none;
-    color: white;
+    color: white !important;
     padding: 6px 12px;
-    transition: 0.2s;
 }
 
 .menu a:hover {
     background-color: #d9d9d9;
-    color: black;
+    color: black !important;
 }
 
 .icons {
-    display: flex;
     gap: 10px;
 }
 
@@ -77,254 +46,107 @@ header {
     align-items: center;
 }
 
-/* ================= BANNER ================= */
+/* BANNER */
 .banner {
-    height: 55vh;
+    height: 55vh !important;
     background-image: url("https://picsum.photos/1500/800");
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
     padding: 40px;
-}
-
-.banner-conteudo {
-    max-width: 500px;
 }
 
 .banner h1 {
     font-size: 48px;
-    margin-bottom: 15px;
 }
 
 .banner p {
     font-size: 18px;
-    margin-bottom: 20px;
 }
 
-.botoes button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    cursor: pointer;
-}
-
+/* BOTÕES */
 .btn-play {
     background-color: white;
     color: black;
-    font-weight: bold;
+    padding: 10px 20px;
     border-radius: 5px;
-    transition: transform 0.3s;
-}
-
-.btn-play:hover {
-    transform: scale(1.1);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-info {
     background-color: rgba(109,109,110,0.7);
     color: white;
+    padding: 10px 20px;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
-.btn-info:hover {
-    background-color: rgba(100, 100, 100, 0.8);
-}
-
-/* ================= CATEGORIA ================= */
-.categoria {
-    padding: 20px 40px;
-    margin-bottom: 30px;
-}
-
-.categoria h2 {
-    margin-bottom: 15px;
-}
-
-/* ================= CARROSSEL ================= */
-.carrossel {
-    position: relative;
-    overflow: hidden;
-}
-
+/* CARROSSEL */
 .lista-filmes {
     display: flex;
-    gap: 15px;
-
     overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-
-    padding: 10px 50px;
+    gap: 15px;
+    padding: 10px 40px;
 }
 
-/* esconder scrollbar */
 .lista-filmes::-webkit-scrollbar {
     display: none;
 }
 
-/* ================= FILMES (CARDS) ================= */
 .filme {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    max-width: 300px;
+    min-width: 300px;
 }
 
 .filme img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 200px;
     border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.filme img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+    object-fit: cover;
 }
 
 .filme h3 {
-    font-size: 16px;
     margin-top: 8px;
 }
 
 .filme p {
-    font-size: 13px;
+    font-size: 14px;
     color: #ccc;
-    margin-top: 5px;
 }
 
-/* ================= BOTÕES DO CARROSSEL ================= */
+/* BOTÕES CARROSSEL */
 .btn-scroll {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-
-    width: 45px;
-    height: 70px;
-
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     color: white;
-    font-size: 28px;
-    text-decoration: none;
-
+    width: 40px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    z-index: 999;
-    transition: 0.3s;
 }
 
-.btn-scroll.left {
-    left: 0;
+.carrossel {
+    position: relative;
 }
 
-.btn-scroll.right {
-    right: 0;
-}
-
-.btn-scroll:hover {
-    background: rgba(0,0,0,0.9);
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer {
     background-color: #000;
     padding: 30px;
-    text-align: center;
-    margin-top: 40px;
 }
 
 .footer-links {
-    margin-top: 10px;
+    gap: 15px;
 }
 
 .footer-links a {
     color: #aaa;
     text-decoration: none;
-    margin: 0 10px;
 }
 
 .footer-links a:hover {
     color: white;
-}
-
-/* ================= RESPONSIVO ================= */
-
-/* TABLET */
-@media (max-width: 900px) {
-
-.banner h1 {
-    font-size: 36px;
-}
-
-.filme img {
-    height: 150px;
-}
-
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-
-header {
-    flex-direction: column;
-    gap: 15px;
-}
-
-.menu {
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.icons {
-    display: none;
-}
-
-.banner {
-    height: 40vh;
-    padding: 20px;
-}
-
-.banner h1 {
-    font-size: 28px;
-}
-
-.banner p {
-    font-size: 14px;
-}
-
-.botoes button {
-    padding: 8px 12px;
-    font-size: 14px;
-}
-
-.categoria {
-    padding: 15px;
-}
-
-.lista-filmes {
-    padding: 10px 20px;
-}
-
-.filme {
-    max-width: 200px;
-}
-
-.filme img {
-    height: 120px;
-}
-
-.filme h3 {
-    font-size: 14px;
-}
-
-.filme p {
-    font-size: 11px;
-}
-
 }
